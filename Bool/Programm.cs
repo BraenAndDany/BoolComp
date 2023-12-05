@@ -14,6 +14,23 @@ namespace console
     Тут код простой, даже без комментов разберетесь, возможно NoAndForThree можно было сделать изящнее, но мне было впадлу ;)*/
     class Program
     {
+        public void Auto()
+        {
+            bool first = false;
+            bool second = false;
+            bool third = false;
+            for (int i = 0; i < 8; i++)
+            {
+
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
+
+                Console.Write(first);
+                Console.Write(second);
+                Console.WriteLine(false);
+            }
+        }
         static void Main(string[] args)
         {
             booli booling =  new booli();
@@ -21,45 +38,33 @@ namespace console
             bool first = false;
             bool second = false;
             bool third = false;
-            Console.WriteLine("Таблица второго задания");
-            Console.Write(" " + "A" + "        ");
-            Console.Write(" " + "B" + "       |");
-            Console.Write("No" + "    ");
-            Console.Write("And" + "    ");
-            Console.Write("Or" + "     ");
-            Console.Write("Xor" + "    ");
-            Console.Write("Xnor" + "   ");
-            Console.Write("Impl" + "   ");
-            Console.Write("NoImpl" + "    ");
-            Console.WriteLine();
-            for (int i = 0; i < 4; i++)
-            {
-                if (i == 1)
-                {
-                    first = false;
-                    second = true;
-                }
-                else if (i == 2)
-                {
-                    first = true;
-                    second = false;
-                }
-                else if (i == 3)
-                {
-                    second = true;
-                }
+            //Console.WriteLine("Таблица второго задания");
+            //Console.Write(" " + "A" + "        ");
+            //Console.Write(" " + "B" + "       |");
+            //Console.Write("No" + "    ");
+            //Console.Write("And" + "    ");
+            //Console.Write("Or" + "     ");
+            //Console.Write("Xor" + "    ");
+            //Console.Write("Xnor" + "   ");
+            //Console.Write("Impl" + "   ");
+            //Console.Write("NoImpl" + "    ");
+            //Console.WriteLine();
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    first = (i & 2) != 0;
+            //    second = (i & 1) != 0;
 
-                Console.Write(" " + first + "   ");
-                Console.Write(" " + second + "   |");
-                booling.NoX(first);
-                booling.And(first, second);
-                booling.Or(first, second);
-                booling.Xor(first, second);
-                booling.Xnor(first, second);
-                booling.Impl(first, second);
-                booling.NoImpl(first, second);
-                Console.WriteLine();
-            }
+            //    Console.Write(" " + first + "   ");
+            //    Console.Write(" " + second + "   |");
+            //    booling.No(first);
+            //    booling.And(first, second);
+            //    booling.Or(first, second);
+            //    booling.Xor(first, second);
+            //    booling.Xnor(first, second);
+            //    booling.Impl(first, second);
+            //    booling.NoImpl(first, second);
+            //    Console.WriteLine();
+            //}
             Console.WriteLine("Первая таблица");
             Console.Write(" " + "A" + "        ");
             Console.Write(" " + "B" + "        ");
@@ -69,60 +74,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.And(first, second);
-                booling.AndForThree(first, second, third);
-                Console.WriteLine();    
+                Console.Write(" " + booling.And(first, second) + "   ");
+                Console.Write(" " + booling.And(booling.And(first,second),booling.And(second,third)) + "   ");
+                Console.WriteLine();
             }
             Console.WriteLine("Вторая таблица");
             Console.Write(" " + "A" + "        ");
@@ -134,60 +94,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.NoY(second);
-                booling.And(first, !second);
-                booling.AndForThree(first, !second, third);
+                Console.Write(" " + booling.No(second) + "   ");
+                Console.Write(" " + booling.And(first, booling.No(second)) + "   ");
+                Console.Write(" " + booling.And(booling.And(first, booling.No(second)), booling.And(booling.No(second), third)) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Третья таблица");
@@ -200,60 +115,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.And(first, second);
-                booling.NoZ(third);
-                booling.AndForThree(first, second, !third);
+                Console.Write(" " + booling.And(first, second) + "   ");
+                Console.Write(" " + booling.No(third) + "   ");
+                Console.Write(" " + booling.And(booling.And(first,second), booling.And(second, booling.No(third))) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Четвертая таблица");
@@ -268,62 +138,17 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.NoX(first);
-                booling.NoY(second);
-                booling.And(!first, !second);
-                booling.NoZ(third);
-                booling.AndForThree(!first, !second, !third);
+                Console.Write(" " + booling.No(first) + "   ");
+                Console.Write(" " + booling.No(second) + "   ");
+                Console.Write(" " + booling.And(!first,booling.No(second)) + "   ");
+                Console.Write(" " + booling.No(third) + "   ");
+                Console.Write(" " + booling.And(booling.And(booling.No(first), booling.No(second)), booling.And(booling.No(second),booling.No(third))) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Пятая таблица");
@@ -335,59 +160,14 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.Or(first,second);
-                booling.OrForThree(first,second,third);
+                Console.Write(" " + booling.Or(first, second) + "   ");
+                Console.Write(" " + booling.Or(booling.Or(first, second), booling.Or(second,third)) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Шестая таблица");
@@ -400,60 +180,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.NoY(second);
-                booling.Or(first, !second);
-                booling.OrForThree(first, !second, third);
+                Console.Write(" " + booling.No(second) + "   ");
+                Console.Write(" " + booling.Or(first,booling.No(second)) + "   ");
+                Console.Write(" " + booling.Or(booling.Or(first, booling.No(second)), booling.Or(booling.No(second), third)) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Седьмая таблица");
@@ -466,60 +201,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.Or(first, second);
-                booling.NoZ(third);
-                booling.OrForThree(first, second, !third);
+                Console.Write(" " + booling.Or(first, second) + "   ");
+                Console.Write(" " + booling.No(third) + "   ");
+                Console.Write(" " + booling.Or(booling.Or(first,second), booling.Or(second,booling.No(third))) + "   ");
                 Console.WriteLine();
             }
             Console.WriteLine("Восьмая таблица");
@@ -534,135 +224,21 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.NoX(first);
-                booling.NoY(second);
-                booling.Or(!first, !second);
-                booling.NoZ(third);
-                booling.OrForThree(!first, !second, !third);
+                Console.Write(" " + booling.No(first) + "   ");
+                Console.Write(" " + booling.No(second) + "   ");
+                Console.Write(" " + booling.Or(booling.No(first),booling.No(second)) + "   ");
+                Console.Write(" " + booling.No(third) + "   ");
+                Console.Write(" " + booling.Or(booling.Or(booling.No(first),booling.No(second)), booling.Or(booling.No(second), booling.No(third))) + "   ");
                 Console.WriteLine();
             }
-            Console.WriteLine("Восьмая таблица");
-            Console.Write(" " + "A" + "        ");
-            Console.Write(" " + "B" + "        ");
-            Console.Write(" " + "C" + "       |");
-            Console.Write("NoX" + "    ");
-            Console.Write("NoY" + "    ");
-            Console.Write("NoXOrNoY" + "    ");
-            Console.Write("NoZ" + "    ");
-            Console.Write("NoXOrNoYOrNoZ" + "    ");
-            Console.WriteLine();
-            for (int i = 0; i < 8; i++)
-            {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
-                Console.Write(" " + first + "   ");
-                Console.Write(" " + second + "   ");
-                Console.Write(" " + third + "     |");
-                booling.NoX(first);
-                booling.NoY(second);
-                booling.Or(!first, !second);
-                booling.NoZ(third);
-                booling.OrForThree(!first, !second, !third);
-                Console.WriteLine();
-            }
-            //тут почему-то false улетает в таджикистан, можете исправить или забейте
+
+            ////тут почему-то false улетает в таджикистан, можете исправить или забейте
             Console.WriteLine("Девятая таблица");
             Console.Write(" " + "A" + "        ");
             Console.Write(" " + "B" + "        ");
@@ -673,60 +249,15 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.And(first, second);
-                booling.AndForThree(first, second, third);
-                booling.NoAndForThree(first, second, third);
+                Console.Write(" " + booling.And(first, second) + "   ");
+                Console.Write(" " + booling.And(booling.And(first, second), booling.And(second, third)) + "   ");
+                Console.Write(" " + booling.No(booling.And(booling.And(first, second), booling.And(second, third)))+"   ");
                 Console.WriteLine();
             }
             //тут тоже почему-то false улетает в таджикистан, можете исправить или забейте
@@ -741,61 +272,16 @@ namespace console
             Console.WriteLine();
             for (int i = 0; i < 8; i++)
             {
-                if (i == 0)
-                {
-                    first = false;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 1)
-                {
-                    first = false;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 2)
-                {
-                    first = false;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 3)
-                {
-                    first = false;
-                    second = true;
-                    third = true;
-                }
-                else if (i == 4)
-                {
-                    first = true;
-                    second = false;
-                    third = false;
-                }
-                else if (i == 5)
-                {
-                    first = true;
-                    second = false;
-                    third = true;
-                }
-                else if (i == 6)
-                {
-                    first = true;
-                    second = true;
-                    third = false;
-                }
-                else if (i == 7)
-                {
-                    first = true;
-                    second = true;
-                    third = true;
-                }
+                first = (i & 4) != 0;
+                second = (i & 2) != 0;
+                third = (i & 1) != 0;
                 Console.Write(" " + first + "   ");
                 Console.Write(" " + second + "   ");
                 Console.Write(" " + third + "     |");
-                booling.NoY(second);
-                booling.And(first, !second);
-                booling.AndForThree(first, !second, third);
-                booling.NoAndForThree(first, !second, third);
+                Console.Write(" " + booling.No(second) + "   ");
+                Console.Write(" " + booling.And(first, booling.No(second)) + "   ");
+                Console.Write(" " + booling.And(booling.And(first, booling.No(second)), booling.And(booling.No(second), third)) + "   ");
+                Console.Write(" " + booling.No(booling.And(booling.And(first, booling.No(second)), booling.And(booling.No(second), third))) + "   ");
                 Console.WriteLine();
             }
 
