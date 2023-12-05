@@ -1,151 +1,42 @@
 ﻿namespace booling;
+using System;
 public class booli 
 {
-    bool first;
-    bool second;
-    bool third;
     // Отдельные методы Не для каждой из возможных переменных
-    public void NoX(bool first)
+    public bool No(bool first)
     {
-        if(first != true)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+        return !first;
+
     }
-    public void NoY(bool second)
+    public bool And(bool first, bool second)
     {
-        if (second != true)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+        return first & second;
     }
-    public void NoZ(bool third)
+  
+    public bool Or(bool first, bool second)
     {
-        if (third != true)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+        return first | second;
     }
-    public void And(bool first, bool second)
+
+    public bool Xor(bool first, bool second)
     {
-        bool prov = true;
-        if(first == prov && second == prov)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+       return first ^ second;
     }
-    //метод для трех значений с лог и
-    public void AndForThree(bool first, bool second, bool third)
+    public bool Xnor(bool first, bool second)
     {
-        bool prov = true;
-        if (first == prov && second == prov && third == prov)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+        return first == second;
     }
-    //метод для трех значений с лог не и и
-    public void NoAndForThree(bool first, bool second, bool third)
+    public bool Impl(bool first, bool second)
     {
-        bool prov = true;
-        if (!first == prov || !second == prov || !third == prov)
-        {
-            
-            Console.Write(true + "   ");
-            
-        }
-        if (!first == prov! && !second! && prov! && !third == prov)
-        {
-            Console.Write(false + "   ");
-        }
+        var a = Convert.ToInt32(first);
+        var b = Convert.ToInt32(second);
+        return a >= b;
     }
-    public void Or(bool first, bool second)
+    public bool NoImpl(bool first, bool second)
     {
-        bool prov = true;
-        if (first == prov || second == prov)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
-    }
-    public void OrForThree(bool first, bool second, bool third)
-    {
-        bool prov = true;
-        if (first == prov || second == prov || third == prov)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
-    }
-    public void Xor(bool first, bool second)
-    {
-        bool prov = true;
-        if (first == prov && second == prov)
-        {
-            Console.Write(false + "   ");
-        }
-        else
-        {
-            Console.Write(true + "   ");
-        }
-    }
-    public void Xnor(bool first, bool second)
-    {
-        if (first == second)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-                Console.Write(false + "   ");
-        }
-    }
-    public void Impl(bool first, bool second)
-    {
-        if (first != true||first==second)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
-    }
-    public void NoImpl(bool first, bool second)
-    {
-        if (first == second || first != false)
-        {
-            Console.Write(true + "   ");
-        }
-        else
-        {
-            Console.Write(false + "   ");
-        }
+        var a = Convert.ToInt32(first);
+        var b = Convert.ToInt32(second);
+        return a <= b;
     }
 }
 
